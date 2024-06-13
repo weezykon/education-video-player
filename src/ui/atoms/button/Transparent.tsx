@@ -7,8 +7,8 @@ const Transparent = (props: BaseButtonProps) => {
   return (
     <BaseButton
       {...props}
-      className={`bg-transparent hover:text-black/50 focus:outline-none focus:ring-transparent/50 dark:hover:bg-transparent/90 dark:focus:ring-grey-600 ${props.disabled
-          ? "text-grey-400 bg-transparent/30 dark:hover:bg-transparent/30 focus:ring-transparent/30" : ""
+      className={`bg-transparent hover:text-black/50 focus:outline-none focus:ring-transparent/50 dark:hover:bg-transparent/90 dark:focus:ring-gray-600 ${props.disabled
+          ? "text-gray-400 bg-transparent/30 dark:hover:bg-transparent/30 focus:ring-transparent/30" : ""
       } ${
         className || ""
       }`}

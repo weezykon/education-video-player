@@ -6,7 +6,7 @@ import { getFontSize, getFontWeight } from '../utils/utils';
 
 const Paragraph: React.FC<ParagraphProps> = ({ children, size = FontSize.b4, weight = FontWeight.normal, className, color }) => {
   return (
-    <p className={`antialiased whitespace-normal ${getFontSize(size)} ${getFontWeight(weight)} ${className}`} style={{ color: color || COLORS.GREY[900] }}>{children}</p>
+    <p className={`antialiased whitespace-normal ${getFontSize(size)} ${getFontWeight(weight)} ${className}`} style={{ color: color || COLORS.gray[900] }}>{children}</p>
   );
 };
 

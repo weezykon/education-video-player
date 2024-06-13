@@ -7,8 +7,8 @@ const Secondary = (props: BaseButtonProps) => {
   return (
     <BaseButton
       {...props}
-      className={`bg-white border focus:outline-none dark:focus:ring-grey-600 ${
-        props.disabled ? "bg-white/30 dark:hover:bg-white/10 focus:ring-white/10 text-grey-900 border-grey-20" : "hover:bg-white/80 focus:ring-white/50 dark:hover:bg-white/900 text-black border-grey-900"
+      className={`bg-white border focus:outline-none dark:focus:ring-gray-600 ${
+        props.disabled ? "bg-white/30 dark:hover:bg-white/10 focus:ring-white/10 text-gray-900 border-gray-20" : "hover:bg-white/80 focus:ring-white/50 dark:hover:bg-white/900 text-black border-gray-900"
       } ${
         className || ""
       }`}

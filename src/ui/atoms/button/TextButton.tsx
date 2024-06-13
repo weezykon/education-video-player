@@ -8,7 +8,7 @@ const TextButton = (props: BaseButtonProps) => {
     <BaseButton
       {...props}
       className={`bg-transparent focus:outline-none hover:border-0 w-auto ${props.disabled
-          ? "text-grey-900 focus:ring-transparent/50"
+          ? "text-gray-900 focus:ring-transparent/50"
           : "text-black focus:ring-transparent/50"
       } ${
         className || ""

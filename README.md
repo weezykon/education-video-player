@@ -57,7 +57,6 @@ http://localhost:3000.
 Screenshots
 
 Description of the Home Page
-!(https://gist.github.com/assets/586490/d9906a59-55dd-4fe0-9659-3a25d8b757cb)
 <img src="https://res.cloudinary.com/dqqrgidob/image/upload/v1718372097/sk33dj7fwoq57h0nosqz.png"/>
 
 Description of the Video Page

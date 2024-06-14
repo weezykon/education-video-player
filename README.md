@@ -62,12 +62,5 @@ Description of the Home Page
 Description of the Video Page
 <img src="https://res.cloudinary.com/dqqrgidob/image/upload/v1718372098/aafy59jhkhn5bs6om0k6.png"/>
 
-Additional Information API Documentation: Refer to the provided API
-documentation for details on the available endpoints and how to interact
-with them. Testing: Ensure you have a working internet connection and
-the API server is running to test the application fully. Contributing
-Contributions are welcome! Please fork the repository and submit a pull
-request with your changes.
-
 License This project is licensed under the MIT License. See the LICENSE
 file for more information.

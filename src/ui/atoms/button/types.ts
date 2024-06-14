@@ -1,4 +1,4 @@
-import { CSSProperties, MouseEvent } from "react";
+import { MouseEvent } from "react";
 import { FontSize, FontWeight } from "../utils/types";
 
 export interface BaseButtonProps {

@@ -36,7 +36,7 @@ http://localhost:3000.
 Screenshots
 
 Description of the Home Page
-![localhost_3000_(Laptop 1400) (1)](https://gist.github.com/assets/586490/d9906a59-55dd-4fe0-9659-3a25d8b757cb)
+!(https://gist.github.com/assets/586490/d9906a59-55dd-4fe0-9659-3a25d8b757cb)
 
 Description of the Video Page
 ![localhost_3000_(Laptop 1400)](https://gist.github.com/assets/586490/459c4be0-608f-42cc-b005-53461a76e565)

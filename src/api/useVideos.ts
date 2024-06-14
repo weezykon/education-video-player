@@ -16,6 +16,25 @@ export const useVideos = () => {
   return useQuery(['videos'], getVideos);
 }
 
+export const useVideo = ({
+  video_id,
+}: {
+  video_id: string;
+}) => {
+  const getVideo = async () => {
+    const url = API_ROUTES.VIDEO;
+    const params = { video_id } ;
+    const { data } = await api.get(url, {
+      params
+    });
+    return data;
+  }
+
+  return useQuery(['video', video_id], getVideo, {
+    enabled: !!video_id,
+  });
+}
+
 export const useAddVideo = () => {
   const addVideo = async (args: ICreateVideoInputArgs) => {
     const { data } = await api.post(API_ROUTES.VIDEOS, args);

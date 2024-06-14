@@ -2,6 +2,6 @@ export const API_USER_ID = 'akinbode_akinlolu'
 
 export const API_ROUTES = {
   VIDEOS: '/videos',
-  VIDEO: '/videos/sigle',
+  VIDEO: '/videos/single',
   COMMENT: '/videos/comments',
 }

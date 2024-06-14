@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: 'https://take-home-assessment-423502.uc.r.appspot.com/',
+  baseURL: process.env.REACT_APP_API_BASE_URL,
   withCredentials: true,
 });
 

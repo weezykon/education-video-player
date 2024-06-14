@@ -52,10 +52,10 @@ const Home = () => {
   return (
     <Layout>
       <div className='w-full flex flex-col lg:flex-row gap-4'>
-        <div className='w-full flex flex-col p-6 space-y-3 max-w-[500px] bg-gray-200/30 rounded-tl-2xl rounded-tr-2xl h-[calc(100vh_-_80px)] xl:h-[calc(100vh_-_100px)] scroll-smooth overflow-y-scroll'>
+        <div className='w-full flex flex-col p-6 space-y-4 max-w-[500px] bg-gray-200/30 rounded-tl-2xl rounded-tr-2xl h-[calc(100vh_-_80px)] xl:h-[calc(100vh_-_100px)] scroll-smooth overflow-y-scroll'>
           {Array?.isArray(data?.videos) && data?.videos?.length ? data?.videos?.map((video) => (
             <div className='w-full flex space-x-4 cursor-pointer' onClick={() => openVideo(video?.id)} key={video?.id}>
-              <div className='w-[150px] h-[150px]'>
+              <div className='w-[150px] h-fit'>
                 <img src="https://res.cloudinary.com/dqqrgidob/image/upload/v1718360553/spy8ltfuihrmnhltbmqv.png"
                   alt="thumbnail"
                   className="w-full object-cover rounded-md"

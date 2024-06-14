@@ -1,8 +1,11 @@
 import React from 'react'
+import { Layout } from 'ui/templates/layout'
 
 const Video = () => {
   return (
-    <div>Video</div>
+    <Layout>
+      Video
+    </Layout>
   )
 }
 

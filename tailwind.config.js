@@ -31,16 +31,16 @@ module.exports = {
   theme: {
     fontSize,
     extend: {
-        screens: {
-            xs: '320px',
-            sm: '640px',
-            md: '700px',
-            lg: '1024px',
-            'xl': '1280px',
-            '2xl': '1440px',
-            '3xl': '1600px',
-            '4xl': '1920px',
-        },
+      screens: {
+        xs: '320px',
+        sm: '640px',
+        md: '700px',
+        lg: '1024px',
+        'xl': '1280px',
+        '2xl': '1440px',
+        '3xl': '1600px',
+        '4xl': '1920px',
+      },
     }
   },
   plugins: [],

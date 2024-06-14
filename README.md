@@ -7,19 +7,24 @@ application offers a user-friendly and visually appealing interface,
 integrating with a backend API to provide seamless interactions.
 
 ### Features
-Video Listing: Display a list of videos, allowing users to select and watch them.
-Video Creation: Users can create new video entries with a title, description, and video URL.
-Commenting: Users can comment on videos and view comments from other users.
-Full-Screen Video Playback: Videos can be played in full screen with full playback functionality.
-Playback Controls: Options to adjust playback speed and volume.
+<ul>
+  <li>Video Listing: Display a list of videos, allowing users to select and watch them.</li>
+  <li>Video Creation: Users can create new video entries with a title, description, and video URL.</li>
+  <li>Commenting: Users can comment on videos and view comments from other users.</li>
+  <li>Full-Screen Video Playback: Videos can be played in full screen with full playback functionality.</li>
+  <li>Playback Controls: Options to adjust playback speed and volume.</li>
+</ul>
 
 ### Technologies Used
-React: For building the user interface.
-Typescript: For type safety and better developer experience.
-React Query: For data fetching, caching, synchronization, and more.
-@vidstack/player-react: For advanced video player features.
-Tailwind CSS: For styling the application.
-Axios: For making HTTP requests to the backend API.
+<ul>
+  <li>React: For building the user interface.</li>
+  <li>Typescript: For type safety and better developer experience.</li>
+  <li>React Query: For data fetching, caching, synchronization, and more.</li>
+  <li>@vidstack/player-react: For advanced video player features.</li>
+  <li>Tailwind CSS: For styling the application.</li>
+  <li>Axios: For making HTTP requests to the backend API.</li>
+</ul>
+
 
 
 ### Installation Prerequisites 

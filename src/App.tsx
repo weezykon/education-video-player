@@ -1,7 +1,11 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react';
 import { QueryCache, QueryClient, QueryClientProvider } from 'react-query';
+import { routes } from 'core/router';
+import {
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
 
 // setup react query client and cache
 const queryCache = new QueryCache();
@@ -16,24 +20,28 @@ const queryClient = new QueryClient({
 });
 
 function App() {
+  const location = useLocation();
+
+  useEffect(() => {
+    // --- scroll to top of page on url change ---
+    window.scrollTo(0, 0);
+  }, [location]);
+
   return (
     <QueryClientProvider client={queryClient}>
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.tsx</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <Routes>
+        {routes.map((route, index) => (
+          <Route
+            key={index}
+            path={route.path}
+            element={
+              <React.Fragment>
+                <route.Component />
+              </React.Fragment>
+            }
+          ></Route>
+        ))}
+      </Routes>
     </QueryClientProvider>
   );
 }

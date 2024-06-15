@@ -15,6 +15,10 @@ export interface IVideoDetails {
   video_url: string; // URL of the video
 }
 
-export type VideosApiDats = {
+export type VideosApiData = {
   videos: IVideoDetails[]
+}
+
+export type VideoApiData = {
+  video: IVideoDetails
 }

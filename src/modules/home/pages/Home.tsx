@@ -49,34 +49,68 @@ const Home = () => {
     });
   }
 
+  const getVideosContent = () => {
+    if (isLoading) {
+      return Array.from({ length: 5 }).map((_, index) => (
+        <div className='w-full flex space-x-4' key={index}>
+          <div className='w-[150px] h-fit'>
+            <div className="w-full h-[100px] bg-slate-300 rounded-md animate-pulse"></div>
+          </div>
+          <div className='w-full flex flex-col space-y-4'>
+            <div className="w-3/4 h-6 bg-slate-300 rounded-md animate-pulse"></div>
+            <div className="w-8/12 h-12 bg-slate-300 rounded-md animate-pulse"></div>
+          </div>
+        </div>
+      ));
+    }
+
+    if (Array?.isArray(data?.videos) && data?.videos?.length) {
+      return data?.videos?.map((video) => (
+        <div className='w-full flex space-x-4 cursor-pointer' onClick={() => openVideo(video?.id)} key={video?.id}>
+          <div className='w-[150px] h-fit'>
+            <img src="https://res.cloudinary.com/dqqrgidob/image/upload/v1718360553/spy8ltfuihrmnhltbmqv.png"
+              alt="thumbnail"
+              className="w-full object-cover rounded-md"
+              loading="lazy"
+            />
+          </div>
+          <div className='flex flex-col space-y-4'>
+            <Heading
+              variant='h2'
+              size='h9'
+              weight="normal"
+              color={COLORS.GRAY[900]}
+            >
+              {video?.title}
+            </Heading>
+            <Paragraph size="b5" color={COLORS.GRAY[400]}>
+              {limitString(video?.description, 20, true)}
+            </Paragraph>
+          </div>
+        </div>
+      ));
+    }
+
+    // return no data
+    return (
+      <div className='w-full h-[200px] flex items-center justify-center'>
+        <Heading
+          variant='h2'
+          size='h9'
+          weight="normal"
+          color={COLORS.GRAY[900]}
+        >
+          No data found
+        </Heading>
+      </div>
+    )
+  }
+
   return (
     <Layout>
       <div className='w-full flex flex-col lg:flex-row gap-4'>
         <div className='w-full flex flex-col p-6 space-y-4 max-w-[500px] bg-gray-200/30 rounded-tl-2xl rounded-tr-2xl h-[calc(100vh_-_80px)] xl:h-[calc(100vh_-_100px)] scroll-smooth overflow-y-scroll'>
-          {Array?.isArray(data?.videos) && data?.videos?.length ? data?.videos?.map((video) => (
-            <div className='w-full flex space-x-4 cursor-pointer' onClick={() => openVideo(video?.id)} key={video?.id}>
-              <div className='w-[150px] h-fit'>
-                <img src="https://res.cloudinary.com/dqqrgidob/image/upload/v1718360553/spy8ltfuihrmnhltbmqv.png"
-                  alt="thumbnail"
-                  className="w-full object-cover rounded-md"
-                  loading="lazy"
-                />
-              </div>
-              <div className='flex flex-col space-y-4'>
-                <Heading
-                  variant='h2'
-                  size='h9'
-                  weight="normal"
-                  color={COLORS.GRAY[900]}
-                >
-                  {video?.title}
-                </Heading>
-                <Paragraph size="b5" color={COLORS.GRAY[400]}>
-                  {limitString(video?.description, 20, true)}
-                </Paragraph>
-              </div>
-            </div>
-          )) : null}
+          {getVideosContent()}
         </div>
 
         {/* Add Video */}

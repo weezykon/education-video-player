@@ -20,28 +20,48 @@ const Video = () => {
     video_id
   });
 
-  return (
-    <Layout>
-      {data?.video ? (
+  const getVideoContent = () => {
+    if (isLoading) {
+      return (
         <div className='w-full flex flex-col space-y-3'>
-          <MediaPlayer autoplay={true} controls={true} title="Sprite Fight" src={data?.video?.video_url}>
-            <MediaProvider />
-          </MediaPlayer>
-          <div className='flex flex-col space-y-4'>
-            <Heading
-              variant='h2'
-              size='h9'
-              weight="normal"
-              color={COLORS.GRAY[900]}
-            >
-              {data?.video?.title}
-            </Heading>
-            <Paragraph size="b5" color={COLORS.GRAY[400]}>
-              {data?.video?.description}
-            </Paragraph>
+          <div className="w-full h-[500px] bg-slate-300 animate-pulse"></div>
+          <div className='w-full flex flex-col space-y-4'>
+            <div className="w-3/4 h-6 bg-slate-300 rounded-md animate-pulse"></div>
+            <div className="w-8/12 h-12 bg-slate-300 rounded-md animate-pulse"></div>
           </div>
         </div>
-      ) : null}
+      );
+    }
+
+    if (!data?.video) {
+      return <div>No video found</div>;
+    }
+
+    return (
+      <div className='w-full flex flex-col space-y-3'>
+        <MediaPlayer autoplay={true} controls={true} volume={1} title="Sprite Fight" src={data?.video?.video_url}>
+          <MediaProvider />
+        </MediaPlayer>
+        <div className='flex flex-col space-y-4'>
+          <Heading
+            variant='h2'
+            size='h9'
+            weight="normal"
+            color={COLORS.GRAY[900]}
+          >
+            {data?.video?.title}
+          </Heading>
+          <Paragraph size="b5" color={COLORS.GRAY[400]}>
+            {data?.video?.description}
+          </Paragraph>
+        </div>
+      </div>
+    );
+  };
+
+  return (
+    <Layout>
+      {getVideoContent()}
     </Layout>
   )
 }

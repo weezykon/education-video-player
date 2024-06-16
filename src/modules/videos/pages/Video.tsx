@@ -39,7 +39,7 @@ const Video = () => {
 
     return (
       <div className='w-full flex flex-col space-y-3'>
-        <MediaPlayer autoplay={true} controls={true} volume={1} title="Sprite Fight" src={data?.video?.video_url}>
+        <MediaPlayer autoplay={true} controls={true} volume={1} title={data?.video?.title} src={data?.video?.video_url}>
           <MediaProvider />
         </MediaPlayer>
         <div className='flex flex-col space-y-4'>

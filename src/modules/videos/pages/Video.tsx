@@ -101,7 +101,7 @@ const Video = () => {
                 weight="semiBold"
                 color={COLORS.GRAY[900]}
               >
-                Comments
+                Comments {videoCommentsData?.comments?.length}
               </Heading>
               <div className='w-full flex flex-col space-y-2'>
                 {videoCommentsData?.comments?.map((comment) => (

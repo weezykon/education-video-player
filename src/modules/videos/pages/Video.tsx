@@ -16,7 +16,7 @@ const Video = () => {
   const params = useParams();
   const createComment = useAddVideoComment();
   const video_id = params.id as string;
-  const { register, handleSubmit, reset, control } = useForm<ICommentVideoInput>()
+  const { register, handleSubmit, reset, control, formState: { errors } } = useForm<ICommentVideoInput>()
 
   const {
     data,
@@ -131,10 +131,15 @@ const Video = () => {
                     const maxLength = MAXIMUM_NOTE_LENGTH;
 
                     return (
+                      <>
                       <textarea
-                        className={`w-full appearance-none border border-grey-20 px-4 py-3 font-normal text-b6 xl:text-b4 text-grey-900 rounded-lg focus:outline-none focus:border-grey-20 focus:shadow-grey-100 focus:shadow-purple-50 placeholder:text-grey-400 h-[116px] overflow-y-scroll resize-none`}
-                        {...(register && register('comment', { required: true }))}
+                        className={`w-full appearance-none border ${errors.comment ? 'border-red-400' : 'border-gray-20'} px-4 py-3 font-normal text-b6 xl:text-b4 text-grey-900 rounded-lg focus:outline-none focus:border-grey-20 focus:shadow-grey-100 focus:shadow-purple-50 placeholder:text-grey-400 h-[116px] overflow-y-scroll resize-none`}
+                        {...(register && register('comment', { required: "Comment is required", maxLength }))}
                       ></textarea>
+                      {errors.comment ? (
+                        <span className='text-red-400 text-b6'>{errors?.comment?.message}</span>
+                        ) : null}
+                      </>
                     );
                   }}
                 />

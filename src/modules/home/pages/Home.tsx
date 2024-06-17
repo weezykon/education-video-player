@@ -13,7 +13,7 @@ import { useNavigate } from 'react-router-dom'
 
 const Home = () => {
   const navigate = useNavigate();
-  const { register, handleSubmit, reset } = useForm<ICreateVideoInput>()
+  const { register, handleSubmit, reset, formState: { errors } } = useForm<ICreateVideoInput>()
   const createVideo = useAddVideo();
   const {
     data,
@@ -133,7 +133,11 @@ const Home = () => {
               >
                 Title
               </label>
-              <input className='w-full flex items-center appearance-none border border-gray-20 px-4 py-3 font-normal text-b6 xl:text-b4 text-gray-900 rounded-lg focus:outline-none focus:border-gray-20 focus:shadow-gray-100 placeholder:text-gray-400' {...register("title", { required: true })} />
+              <input className={`w-full flex items-center appearance-none border ${errors.title ? 'border-red-400' : 'border-gray-20'} px-4 py-3 font-normal text-b6 xl:text-b4 text-gray-900 rounded-lg focus:outline-none focus:border-gray-20 focus:shadow-gray-100 placeholder:text-gray-400`} {...register("title", { required: "Title is required" })} />
+              {errors.title ? (
+                <span className='text-red-400 text-b6'>{errors?.title?.message}</span>
+              ) : null}
+
             </div>
             <div className='w-full flex flex-col space-y-2'>
               <label
@@ -142,7 +146,10 @@ const Home = () => {
               >
                 Description
               </label>
-              <input className='w-full flex items-center appearance-none border border-gray-20 px-4 py-3 font-normal text-b6 xl:text-b4 text-gray-900 rounded-lg focus:outline-none focus:border-gray-20 focus:shadow-gray-100 placeholder:text-gray-400' {...register("description", { required: true })} />
+              <input className={`w-full flex items-center appearance-none border ${errors.description ? 'border-red-400' : 'border-gray-20'}  px-4 py-3 font-normal text-b6 xl:text-b4 text-gray-900 rounded-lg focus:outline-none focus:border-gray-20 focus:shadow-gray-100 placeholder:text-gray-400`} {...register("description", { required: "Description is required" })} />
+              {errors.description?.message ? (
+                <span className='text-red-400 text-b6'>{errors?.description?.message}</span>
+              ) : null}
             </div>
             {/* TODO: convert input to file uploader */}
             <div className='w-full flex flex-col space-y-2'>
@@ -152,7 +159,10 @@ const Home = () => {
               >
                 Video Url
               </label>
-              <input className='w-full flex items-center appearance-none border border-gray-20 px-4 py-3 font-normal text-b6 xl:text-b4 text-gray-900 rounded-lg focus:outline-none focus:border-gray-20 focus:shadow-gray-100 placeholder:text-gray-400' {...register("video_url", { required: true })} />
+              <input className={`w-full flex items-center appearance-none border ${errors.video_url ? 'border-red-400' : 'border-gray-20'}  px-4 py-3 font-normal text-b6 xl:text-b4 text-gray-900 rounded-lg focus:outline-none focus:border-gray-20 focus:shadow-gray-100 placeholder:text-gray-400`} {...register("video_url", { required: "Video url is required" })} />
+              {errors.video_url ? (
+                <span className='text-red-400 text-b6'>{errors?.video_url?.message}</span>
+              ) : null}
             </div>
 
             <Button

@@ -5,3 +5,5 @@ export const API_ROUTES = {
   VIDEO: '/videos/single',
   COMMENT: '/videos/comments',
 }
+
+export const MAXIMUM_NOTE_LENGTH = 400

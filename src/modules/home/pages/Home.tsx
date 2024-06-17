@@ -22,17 +22,14 @@ const Home = () => {
     refetch,
   } = useVideos();
 
-  // TODO: add loader
-
-
   const onSubmit = async (input: ICreateVideoInput) => {
     try {
-        const registerData = await createVideo.mutateAsync({
+        const createVideoData = await createVideo.mutateAsync({
           ...input,
           user_id: API_USER_ID
         })
 
-      if (registerData?.success) {
+      if (createVideoData?.success) {
         reset()
         refetch()
       }

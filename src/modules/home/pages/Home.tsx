@@ -71,7 +71,7 @@ const Home = () => {
               loading="lazy"
             />
           </div>
-          <div className='flex flex-col space-y-4'>
+          <div className='flex flex-col space-y-2'>
             <Heading
               variant='h2'
               size='h9'
@@ -82,6 +82,10 @@ const Home = () => {
             </Heading>
             <Paragraph size="b5" color={COLORS.GRAY[400]}>
               {limitString(video?.description, 20, true)}
+            </Paragraph>
+
+            <Paragraph size="b7" color={COLORS.GRAY[400]}>
+              comments: {video?.num_comments}
             </Paragraph>
           </div>
         </div>
